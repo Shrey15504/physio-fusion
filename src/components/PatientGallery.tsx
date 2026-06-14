@@ -4,8 +4,7 @@ import p3 from "@/assets/patients/p3.jpeg";
 import p4 from "@/assets/patients/p4.jpeg";
 import p5 from "@/assets/patients/p5.jpeg";
 import p6 from "@/assets/patients/p6.jpeg";
-import p7 from "@/assets/patients/p7.jpeg";
-import p8 from "@/assets/patients/p8.jpeg";
+
 
 const images = [
   { src: p1, label: "Kinesio taping therapy" },
@@ -14,8 +13,7 @@ const images = [
   { src: p4, label: "Lower back taping" },
   { src: p5, label: "Dry needling & electrotherapy" },
   { src: p6, label: "Senior rehabilitation" },
-  { src: p7, label: "Cervical acupuncture" },
-  { src: p8, label: "Pediatric physiotherapy" },
+
 ];
 
 export function PatientGallery() {

@@ -3,8 +3,8 @@ import spine from "@/assets/illustration-spine.png";
 
 const points = [
   "Personalised treatment plans for every patient",
-  "Evidence-based physiotherapy by trained therapists",
-  "Advanced rehabilitation techniques and equipment",
+  "1:1 sessions — dedicated therapist attention",
+  "Move better — restore strength & mobility",
   "Care for all age groups — kids to seniors",
 ];
 

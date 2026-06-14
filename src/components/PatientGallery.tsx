@@ -17,8 +17,8 @@ const images = [
 ];
 
 export function PatientGallery() {
-  const row1 = images.slice(0, 4);
-  const row2 = images.slice(4, 8);
+  const row1 = images.slice(0, 3);
+  const row2 = images.slice(3, 6);
 
   return (
     <section id="gallery" className="relative overflow-hidden bg-gradient-hero py-24">

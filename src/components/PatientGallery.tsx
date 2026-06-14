@@ -23,7 +23,7 @@ export function PatientGallery() {
   const row2 = images.slice(4, 8);
 
   return (
-    <section id="gallery" className="bg-background py-24 overflow-hidden">
+    <section id="gallery" className="relative overflow-hidden bg-gradient-hero py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-primary">Real care, real results</span>

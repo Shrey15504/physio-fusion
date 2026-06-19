@@ -22,8 +22,7 @@ export function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="#book"
-              className="group inline-flex items-center gap-2 rounded-full bg-charcoal px-7 py-4 text-sm font-semibold text-white shadow-elevated transition-all hover:scale-[1.02] hover:shadow-glow dark:bg-primary dark:text-charcoal"
-            >
+              className="group inline-flex items-center gap-2 rounded-full bg-charcoal px-7 py-4 text-sm font-semibold text-white shadow-elevated transition-all hover:scale-[1.02] hover:shadow-glow"
               Book your consultation
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>

@@ -33,10 +33,10 @@ export function Navbar() {
           ))}
         </ul>
         <div className="flex items-center gap-2">
-          <ThemeToggle />
+
           <a
             href="#book"
-            className="hidden rounded-full bg-charcoal px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-charcoal/90 hover:shadow-soft md:inline-flex dark:bg-primary dark:text-charcoal dark:hover:bg-primary/90"
+            className="hidden rounded-full bg-charcoal px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-charcoal/90 hover:shadow-soft md:inline-flex"
           >
             Book Appointment
           </a>
@@ -55,7 +55,7 @@ export function Navbar() {
                 </a>
               </li>
             ))}
-            <a href="#book" onClick={() => setOpen(false)} className="mt-2 rounded-full bg-charcoal px-5 py-3 text-center text-sm font-semibold text-white dark:bg-primary dark:text-charcoal">
+            <a href="#book" onClick={() => setOpen(false)} className="mt-2 rounded-full bg-charcoal px-5 py-3 text-center text-sm font-semibold text-white">
               Book Appointment
             </a>
           </ul>

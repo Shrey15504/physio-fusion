@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.jpeg";
-import { ThemeToggle } from "./ThemeToggle";
+
 
 const links = [
   { href: "#about", label: "About Us" },

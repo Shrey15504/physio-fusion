@@ -30,7 +30,7 @@ export function Hero() {
           </div>
           <div className="mt-10 flex items-center gap-8">
             {[
-              { k: "All Ages", v: "Personalised care" },
+              { k: "Care for everyone", v: "Personalised Recovery plans" },
               { k: "1:1", v: "Therapist sessions" },
               { k: "Evidence", v: "Based therapy" },
             ].map((s) => (

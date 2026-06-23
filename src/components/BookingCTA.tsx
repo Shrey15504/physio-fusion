@@ -72,9 +72,21 @@ export function BookingCTA() {
     try {
       await bookEvent({ data: { name, phone, service, date, time, message: message ?? "" } });
       toast.success("Appointment added to clinic calendar. Confirming on WhatsApp…");
-    } catch (err) {
-      console.error(err);
-      toast.message("We'll confirm your slot on WhatsApp.");
+    } catch (err: any) {
+  console.error(err);
+
+  if (err?.message?.includes("already booked")) {
+    toast.error(
+      "Selected time slot is already booked. Please choose another slot."
+    );
+  } else {
+    toast.error(
+      "Unable to book appointment right now. Please try again."
+    );
+  }
+
+  setSubmitting(false);
+  return;
     }
     const text = `Hello Physio-Fusion, I'd like to book an appointment.%0A%0AName: ${encodeURIComponent(
       name,

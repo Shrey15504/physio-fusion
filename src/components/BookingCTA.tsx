@@ -111,7 +111,7 @@ export function BookingCTA() {
                 Share a few details and our team will confirm your slot on WhatsApp within minutes.
               </p>
               <div className="mt-6 space-y-2 text-sm text-white/70">
-                <p>📞 +91 77386 75653 · +91 70214 66519</p>
+                <p>📞 +91 77386 75653 · +91 70215 66419</p>
                 <p>🕒 Mon – Sat: 11:00 AM – 8:00 PM</p>
                 <p>🗓️ Sunday: Appointments only</p>
                 <p>📍 Kalpak Estate, Antophill, Mumbai 400037</p>

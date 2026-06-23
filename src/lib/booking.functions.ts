@@ -19,6 +19,7 @@ export const createBookingEvent = createServerFn({
 })
   .inputValidator((data: unknown) => schema.parse(data))
   .handler(async ({ data }) => {
+    console.log("Booking request received:", data);
     const auth = new google.auth.JWT(
       process.env.GOOGLE_CLIENT_EMAIL,
       undefined,

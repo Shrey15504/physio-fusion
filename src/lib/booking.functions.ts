@@ -20,12 +20,16 @@ export const createBookingEvent = createServerFn({
   .inputValidator((data: unknown) => schema.parse(data))
   .handler(async ({ data }) => {
     console.log("Booking request received:", data);
-    const auth = new google.auth.JWT(
-      process.env.GOOGLE_CLIENT_EMAIL,
-      undefined,
-      process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
-      ["https://www.googleapis.com/auth/calendar"]
-    );
+    const privateKey = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n");
+
+console.log("Client Email:", process.env.GOOGLE_CLIENT_EMAIL);
+console.log("Private Key exists:", !!privateKey);
+
+const auth = new google.auth.JWT({
+  email: process.env.GOOGLE_CLIENT_EMAIL,
+  key: privateKey,
+  scopes: ["https://www.googleapis.com/auth/calendar"],
+});
 
     const calendar = google.calendar({
       version: "v3",

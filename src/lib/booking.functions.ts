@@ -61,6 +61,25 @@ Booked via Physio-Fusion Website
     try {
   console.log("Creating Google Calendar event...");
 
+  // Check if slot already exists
+const existingEvents = await calendar.events.list({
+  calendarId: process.env.GOOGLE_CALENDAR_ID,
+  timeMin: start.toISOString(),
+  timeMax: end.toISOString(),
+  singleEvents: true,
+  orderBy: "startTime",
+});
+
+if (
+  existingEvents.data.items?.some(
+    (event) => event.status !== "cancelled"
+  )
+) {
+  throw new Error(
+    "This appointment slot is already booked. Please choose another time."
+  );
+}
+      
   const response = await calendar.events.insert({
     calendarId: process.env.GOOGLE_CALENDAR_ID,
     requestBody: event,

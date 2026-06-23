@@ -54,10 +54,21 @@ Booked via Physio-Fusion Website
       },
     };
 
-    const response = await calendar.events.insert({
-      calendarId: process.env.GOOGLE_CALENDAR_ID,
-      requestBody: event,
-    });
+    try {
+  console.log("Creating Google Calendar event...");
 
-    return response.data;
+  const response = await calendar.events.insert({
+    calendarId: process.env.GOOGLE_CALENDAR_ID,
+    requestBody: event,
+  });
+
+  console.log("Google Calendar event created successfully");
+
+  return response.data;
+} catch (error: any) {
+  console.error("Google Calendar Error:", error);
+  console.error("Google Calendar Error Details:", error?.response?.data);
+
+  throw error;
+}
   });

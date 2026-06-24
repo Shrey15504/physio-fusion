@@ -117,16 +117,16 @@ export const getBookedSlots = createServerFn({
     return (
       events.data.items
         ?.filter((event) => event.status !== "cancelled")
-        .map((event) => {
+         .map((event) => {
           const dateTime = event.start?.dateTime;
           if (!dateTime) return null;
 
-          const dt = new Date(dateTime);
+  const dt = new Date(dateTime);
 
-          return `${String(dt.getHours()).padStart(2, "0")}:${String(
-            dt.getMinutes()
-          ).padStart(2, "0")}`;
-        })
-        .filter(Boolean) ?? []
-    );
+  return dt.toLocaleTimeString("en-GB", {
+    timeZone: "Asia/Kolkata",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
   });
+})

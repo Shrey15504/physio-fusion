@@ -1,9 +1,11 @@
-import { useState } from "react";
-import { Calendar, Send } from "lucide-react";
+import { useEffect, useState } from "react";import { Calendar, Send } from "lucide-react";
 import { z } from "zod";
 import { toast } from "sonner";
 import { useServerFn } from "@tanstack/react-start";
-import { createBookingEvent } from "@/lib/booking.functions";
+import {
+  createBookingEvent,
+  getBookedSlots,
+} from "@/lib/booking.functions";
 
 const services = [
   "Orthopedic Rehab",
@@ -56,6 +58,27 @@ const formatSlot = (t: string) => {
 
 export function BookingCTA() {
   const [submitting, setSubmitting] = useState(false);
+  const [selectedDate, setSelectedDate] = useState("");
+  const [bookedSlots, setBookedSlots] = useState<string[]>([]);
+
+  const fetchBookedSlots = useServerFn(getBookedSlots);
+  useEffect(() => {
+  if (!selectedDate) return;
+
+  const loadSlots = async () => {
+    try {
+      const slots = await fetchBookedSlots({
+        data: { date: selectedDate },
+      });
+
+      setBookedSlots(slots as string[]);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  loadSlots();
+}, [selectedDate]);
   const bookEvent = useServerFn(createBookingEvent);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -154,16 +177,41 @@ export function BookingCTA() {
                   </div>
                   <div>
                     <label htmlFor="date" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-white/70">Preferred date</label>
-                    <input id="date" name="date" type="date" required min={today} className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white focus:border-primary focus:outline-none [color-scheme:dark]" />
+                    <input
+                    id="date"
+                    name="date"
+                    type="date"
+                    required
+                    min={today}
+                    onChange={(e) => setSelectedDate(e.target.value)}
+                    className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white focus:border-primary focus:outline-none [color-scheme:dark]"
+                    />
                   </div>
                 </div>
                 <div>
                   <label htmlFor="time" className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-white/70">Preferred time</label>
-                  <select id="time" name="time" required defaultValue="" className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white focus:border-primary focus:outline-none">
-                    <option value="" disabled className="text-charcoal">Select a time slot…</option>
-                    {timeSlots.map((t) => (
-                      <option key={t} value={t} className="text-charcoal">{formatSlot(t)}</option>
-                    ))}
+                  <select
+                  id="time"
+                  name="time"
+                  required
+                  defaultValue=""
+                  className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white focus:border-primary focus:outline-none"
+                  >
+                  <option value="" disabled className="text-charcoal">
+                  Select a time slot…
+                  </option>
+
+                  {timeSlots.map((t) => (
+                  <option
+                  key={t}
+                  value={t}
+                  disabled={bookedSlots.includes(t)}
+                  className="text-charcoal"
+                  >
+                  {formatSlot(t)}
+                  {bookedSlots.includes(t) ? " (Booked)" : ""}
+                  </option>
+                  ))}
                   </select>
                   <p className="mt-1.5 text-xs text-white/50">Clinic hours: Mon–Sat 11:00 AM – 8:00 PM · Sunday by appointment</p>
                 </div>

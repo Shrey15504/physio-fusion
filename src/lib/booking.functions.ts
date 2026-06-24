@@ -35,23 +35,24 @@ export const createBookingEvent = createServerFn({
     const end = new Date(start.getTime() + 45 * 60 * 1000);
 
     const event = {
-      summary: `Physio Appointment - ${data.name} (${data.service})`,
-      description: `
-Name: ${data.name}
-Phone: ${data.phone}
-Service: ${data.service}
-Notes: ${data.message || "-"}
-Booked via Physio-Fusion Website
-      `,
-      start: {
-        dateTime: start.toISOString(),
-        timeZone: "Asia/Kolkata",
-      },
-      end: {
-        dateTime: end.toISOString(),
-        timeZone: "Asia/Kolkata",
-      },
-    };
+  summary: `Physio Appointment - ${data.name} (${data.service})`,
+  description:
+    `Name: ${data.name}\n` +
+    `Phone: ${data.phone}\n` +
+    `Service: ${data.service}\n` +
+    `Notes: ${data.message || "-"}\n` +
+    `Booked via Physio-Fusion Website`,
+
+  start: {
+    dateTime: start.toISOString(),
+    timeZone: "Asia/Kolkata",
+  },
+
+  end: {
+    dateTime: end.toISOString(),
+    timeZone: "Asia/Kolkata",
+  },
+};
 
     // Check if slot already exists
     const existingEvents = await calendar.events.list({

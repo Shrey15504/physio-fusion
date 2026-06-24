@@ -130,4 +130,3 @@ export const getBookedSlots = createServerFn({
         .filter(Boolean) ?? []
     );
   });
-```

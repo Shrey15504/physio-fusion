@@ -57,9 +57,10 @@ const formatSlot = (t: string) => {
 };
 
 export function BookingCTA() {
-  const [submitting, setSubmitting] = useState(false);
-  const [selectedDate, setSelectedDate] = useState("");
-  const [bookedSlots, setBookedSlots] = useState<string[]>([]);
+const [submitting, setSubmitting] = useState(false);
+const [selectedDate, setSelectedDate] = useState("");
+const [selectedTime, setSelectedTime] = useState("");
+const [bookedSlots, setBookedSlots] = useState<string[]>([]);
 
   const fetchBookedSlots = useServerFn(getBookedSlots);
   useEffect(() => {
@@ -72,8 +73,8 @@ export function BookingCTA() {
     });
 
     console.log("Booked Slots:", slots);
-
     setBookedSlots(slots as string[]);
+    setSelectedTime("");
   } catch (error) {
     console.error(error);
   }
@@ -195,8 +196,8 @@ export function BookingCTA() {
                   <select
                   id="time"
                   name="time"
-                  required
-                  defaultValue=""
+                  value={selectedTime}
+                  onChange={(e) => setSelectedTime(e.target.value)}
                   className="w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white focus:border-primary focus:outline-none"
                   >
                   <option value="" disabled className="text-charcoal">

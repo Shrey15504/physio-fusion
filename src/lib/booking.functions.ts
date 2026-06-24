@@ -130,3 +130,6 @@ export const getBookedSlots = createServerFn({
     hour12: false,
   });
 })
+        .filter(Boolean) ?? []
+    );
+  });

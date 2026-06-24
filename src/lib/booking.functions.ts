@@ -1,4 +1,3 @@
-```ts
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { google } from "googleapis";

@@ -66,16 +66,18 @@ export function BookingCTA() {
   if (!selectedDate) return;
 
   const loadSlots = async () => {
-    try {
-      const slots = await fetchBookedSlots({
-        data: { date: selectedDate },
-      });
+  try {
+    const slots = await fetchBookedSlots({
+      data: { date: selectedDate },
+    });
 
-      setBookedSlots(slots as string[]);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+    console.log("Booked Slots:", slots);
+
+    setBookedSlots(slots as string[]);
+  } catch (error) {
+    console.error(error);
+  }
+};
 
   loadSlots();
 }, [selectedDate]);

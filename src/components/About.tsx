@@ -2,10 +2,10 @@ import { Check } from "lucide-react";
 import spine from "@/assets/illustration-spine.png";
 
 const points = [
-  "Personalised treatment plans for every patient",
-  "1:1 sessions — dedicated therapist attention",
-  "Move better — restore strength & mobility",
-  "Care for all age groups — kids to seniors",
+  "Individualised assessment and customised treatment plans",
+  "Holistic approach to pain relief, recovery, and wellness",
+  "Comprehensive care for neurological, orthopaedic, sports, and musculoskeletal conditions",
+  "Focus on long-term recovery, injury prevention, and improved quality of life",
 ];
 
 export function About() {

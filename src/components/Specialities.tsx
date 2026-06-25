@@ -15,7 +15,7 @@ export function Specialities() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-primary">Our specialities</span>
           <h2 className="mt-3 font-display text-4xl font-bold tracking-tight md:text-5xl">
-            Advanced therapy techniques
+            Advanced Therapy Techniques
           </h2>
           <p className="mt-4 text-muted-foreground">
             Hands-on, modern treatments that accelerate recovery and unlock movement.

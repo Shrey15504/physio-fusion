@@ -140,7 +140,7 @@ const [bookedSlots, setBookedSlots] = useState<string[]>([]);
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider">
                 <Calendar className="h-3.5 w-3.5 text-primary" />
-                Book an appointment
+                Book a Consultation
               </span>
               <h2 className="mt-5 font-display text-4xl font-bold tracking-tight md:text-5xl">
                 Start your recovery <span className="text-primary">today.</span>

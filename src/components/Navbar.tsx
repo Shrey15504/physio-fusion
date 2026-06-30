@@ -35,10 +35,10 @@ export function Navbar() {
         <div className="flex items-center gap-2">
 
           <a
-            href="#book"
-            className="hidden rounded-full bg-charcoal px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-charcoal/90 hover:shadow-soft md:inline-flex"
+          href="#book"
+          className="hidden rounded-full bg-charcoal px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-charcoal/90 hover:shadow-soft md:inline-flex"
           >
-            Book Consultation
+          Book Consultation
           </a>
           <button onClick={() => setOpen(!open)} className="md:hidden" aria-label="Menu">
             {open ? <X /> : <Menu />}

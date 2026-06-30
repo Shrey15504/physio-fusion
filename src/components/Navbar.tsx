@@ -38,7 +38,7 @@ export function Navbar() {
             href="#book"
             className="hidden rounded-full bg-charcoal px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-charcoal/90 hover:shadow-soft md:inline-flex"
           >
-            Book Appointment
+            Book Consultation
           </a>
           <button onClick={() => setOpen(!open)} className="md:hidden" aria-label="Menu">
             {open ? <X /> : <Menu />}
@@ -56,7 +56,7 @@ export function Navbar() {
               </li>
             ))}
             <a href="#book" onClick={() => setOpen(false)} className="mt-2 rounded-full bg-charcoal px-5 py-3 text-center text-sm font-semibold text-white">
-              Book Appointment
+              Book Consultation
             </a>
           </ul>
         </div>

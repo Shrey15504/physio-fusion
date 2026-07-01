@@ -13,7 +13,7 @@ export function About() {
     <section id="about" className="relative overflow-hidden bg-gradient-hero py-24">
       <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-2 md:items-center">
         <div className="relative">
-          <div className="rounded-3xl bg-gradient-primary p-4 shadow-elevated">
+          <div className="overflow-hidden rounded-3xl shadow-elevated">
             <img
             src={spine}
             alt="Physiotherapist"

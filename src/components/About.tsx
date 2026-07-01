@@ -13,14 +13,14 @@ export function About() {
     <section id="about" className="relative overflow-hidden bg-gradient-hero py-24">
       <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-2 md:items-center">
         <div className="relative">
-          <div className="aspect-square overflow-hidden rounded-3xl bg-gradient-primary shadow-elevated">
+          <div className="rounded-3xl bg-gradient-primary p-4 shadow-elevated">
             <img
             src={spine}
             alt="Physiotherapist"
             width={768}
             height={768}
             loading="lazy"
-            className="h-full w-full object-cover rounded-3xl"
+            className="w-full rounded-3xl object-contain"
             />
           </div>
           <div className="absolute -bottom-6 -right-6 hidden rounded-2xl bg-card p-5 shadow-elevated md:block">

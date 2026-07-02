@@ -47,14 +47,15 @@ export function Contact() {
           </div>
           <div className="overflow-hidden rounded-3xl border border-border shadow-soft lg:col-span-2">
             <iframe
-              title="Physio-Fusion clinic location"
-              src="https://www.google.com/maps?q=Kalpak+Estate+Antophill+Monorail+Station+Mumbai+400037&output=embed"
+              title="Physio-Fusion Physiotherapy Clinic location"
+              src="https://www.google.com/maps?q=Physio-Fusion+Physiotherapy+Clinic,+Ground+Floor,+Shop+No+15,+C-16,+S+M+Rd,+near+Saraswat+Bank,+Kalpak+Estate,+Antop+Hill,+Mumbai,+Maharashtra+400037&z=18&output=embed"
               width="100%"
               height="100%"
               style={{ minHeight: 480, border: 0 }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
+            +
           </div>
         </div>
       </div>

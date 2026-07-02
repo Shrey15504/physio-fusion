@@ -22,7 +22,7 @@ export function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="#book"
-                            className="group inline-flex items-center gap-2 rounded-full bg-charcoal px-7 py-4 text-sm font-semibold text-white shadow-elevated transition-all hover:scale-[1.02] hover:shadow-glow"
+              className="group inline-flex items-center gap-2 rounded-full bg-charcoal px-7 py-4 text-sm font-semibold text-white shadow-elevated transition-all hover:scale-[1.02] hover:shadow-glow"
               >
               Book your consultation
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -49,8 +49,8 @@ export function Hero() {
           <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-card p-4 shadow-elevated sm:flex items-center gap-3 animate-float">
             <img src={logo} alt="Physio-Fusion" className="h-12 w-12 rounded-full object-cover" />
             <div>
-              <div className="text-sm font-semibold text-primary">Personalised Plans</div>
-              <div className="text-xs text-foreground font-medium">One-on-one care</div>
+              <div className="text-sm font-semibold text-primary">Evidence Based Care</div>
+              <div className="text-xs text-foreground font-medium">Results You Can Feel</div>
             </div>
           </div>
         </div>
